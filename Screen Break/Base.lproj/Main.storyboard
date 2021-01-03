@@ -26,16 +26,25 @@
                                 <rect key="frame" x="160" y="555" width="94" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="onTapPauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="evO-iA-jBM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qww-Y6-KOY">
                                 <rect key="frame" x="170" y="307" width="74" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="onTapPlayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGa-xH-Ubw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErU-hn-YCN">
                                 <rect key="frame" x="163" y="663" width="88" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="onTapResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GsD-om-nbS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -51,6 +60,12 @@
                             <constraint firstItem="Qww-Y6-KOY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uMO-G2-fVo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pauseButton" destination="jPW-eV-X5k" id="Xe7-U1-L7G"/>
+                        <outlet property="playButton" destination="Qww-Y6-KOY" id="x1g-nX-tpp"/>
+                        <outlet property="resetButton" destination="ErU-hn-YCN" id="aKA-MY-8Qm"/>
+                        <outlet property="timerText" destination="Uuc-W4-kpb" id="O6a-CQ-9XJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
