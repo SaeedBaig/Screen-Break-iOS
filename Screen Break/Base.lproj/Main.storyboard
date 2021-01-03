@@ -32,6 +32,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Start"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErU-hn-YCN">
+                                <rect key="frame" x="163" y="663" width="88" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="Reset"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -39,8 +44,10 @@
                             <constraint firstItem="jPW-eV-X5k" firstAttribute="top" secondItem="Uuc-W4-kpb" secondAttribute="bottom" constant="83.5" id="5kL-9y-FuL"/>
                             <constraint firstItem="Uuc-W4-kpb" firstAttribute="top" secondItem="Qww-Y6-KOY" secondAttribute="bottom" constant="62.5" id="BpF-FD-Ndh"/>
                             <constraint firstItem="Uuc-W4-kpb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HFV-wy-vJb"/>
+                            <constraint firstItem="ErU-hn-YCN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JL9-uS-MvK"/>
                             <constraint firstItem="jPW-eV-X5k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LxU-ec-9mJ"/>
                             <constraint firstItem="Uuc-W4-kpb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PTh-Zl-s1o"/>
+                            <constraint firstItem="ErU-hn-YCN" firstAttribute="top" secondItem="jPW-eV-X5k" secondAttribute="bottom" constant="53" id="fy8-wJ-jGM"/>
                             <constraint firstItem="Qww-Y6-KOY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uMO-G2-fVo"/>
                         </constraints>
                     </view>
