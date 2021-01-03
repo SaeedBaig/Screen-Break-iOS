@@ -16,28 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uuc-W4-kpb">
-                                <rect key="frame" x="120" y="425" width="174" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uuc-W4-kpb">
+                                <rect key="frame" x="120" y="424.5" width="174" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPW-eV-X5k">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPW-eV-X5k">
                                 <rect key="frame" x="160" y="555" width="94" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Pause"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qww-Y6-KOY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qww-Y6-KOY">
                                 <rect key="frame" x="170" y="307" width="74" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Start"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jPW-eV-X5k" firstAttribute="top" secondItem="Uuc-W4-kpb" secondAttribute="bottom" constant="83.5" id="5kL-9y-FuL"/>
+                            <constraint firstItem="Uuc-W4-kpb" firstAttribute="top" secondItem="Qww-Y6-KOY" secondAttribute="bottom" constant="62.5" id="BpF-FD-Ndh"/>
+                            <constraint firstItem="Uuc-W4-kpb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HFV-wy-vJb"/>
+                            <constraint firstItem="jPW-eV-X5k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LxU-ec-9mJ"/>
+                            <constraint firstItem="Uuc-W4-kpb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PTh-Zl-s1o"/>
+                            <constraint firstItem="Qww-Y6-KOY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uMO-G2-fVo"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
