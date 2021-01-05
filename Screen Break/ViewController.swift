@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: UIViewController {
 
@@ -23,16 +24,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set the appropriate buttons to enabled/disabled
         resetButton.isEnabled = false
         pauseButton.isEnabled = false
         playButton.isEnabled = true
+        
+        // Get permission to send notifications
+        // Borrowed from online tut:
+        // https://www.techotopia.com/index.php/An_iOS_10_Local_Notification_Tutorial#Requesting_Notification_Authorization
+        UNUserNotificationCenter.current().requestAuthorization(options: [[.alert, .sound, .badge]], completionHandler: {(granted, error) in
+            // Handle error
+        })
     }
     
     /* On button tap */
     
     // Reset
     @IBAction func onTapResetButton(_ sender: Any) {
-        print("You pressed Reset button")
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        print("Removed all notifications (I think)")
     }
     
     // Play
@@ -50,18 +60,46 @@ class ViewController: UIViewController {
             resetButton.isEnabled = true
             pauseButton.isEnabled = true
             playButton.isEnabled = false
+            
+            sendNotification()
         }
     }
     
     // Pause
     @IBAction func onTapPauseButton(_ sender: Any) {
-        print("You pressed Pause button")
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        print("Removed all notifications (I think)")
     }
     
     /* Helper functions */
     @objc func runTimer() {
         numSeconds += 1
         timerText.text = "\(numSeconds) seconds"
+    }
+    
+    func sendNotification() {
+        //Borrowed from StackOverflow
+        // https://stackoverflow.com/questions/30619998/repeating-local-notification-daily-at-a-set-time-with-swift
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Meeting Reminder"
+        content.subtitle = "Staff meeting in 20 minutes"
+        content.body = "Don't forget to bring coffee"
+        
+        // Deliver the notification every 1 minute
+        let numMinutesBetweenNotifications = 1
+        let trigger = UNTimeIntervalNotificationTrigger(
+            timeInterval: TimeInterval(numMinutesBetweenNotifications * 60),
+            repeats: true
+        )
+
+        // Create notification object
+        let request = UNNotificationRequest(identifier: "takeBreakNotification", content: content, trigger: trigger)
+        
+        // Add it to Notification Centre
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
+            // Handle error
+        })
     }
 }
 
