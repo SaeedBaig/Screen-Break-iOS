@@ -49,6 +49,7 @@ class ViewController: UIViewController {
     // Play
     @IBAction func onTapPlayButton(_ sender: Any) {
         if !isTimerRunning {
+            
             // This code to add a timer to the background borrowed from:
             // https://stackoverflow.com/questions/44265126/run-timer-in-background
             bgTask = UIApplication.shared.beginBackgroundTask(expirationHandler: {
@@ -58,7 +59,7 @@ class ViewController: UIViewController {
             timer = Timer.scheduledTimer(
                 timeInterval: 1,    // Call timer every 1 second
                 target: self,
-                selector: #selector(runTimer),
+                selector: #selector(onTick),
                 userInfo: nil,
                 repeats: true
             )
@@ -66,7 +67,6 @@ class ViewController: UIViewController {
             
             // Add timer to background
             RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
-            
             
             resetButton.isEnabled = true
             pauseButton.isEnabled = true
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
     }
     
     /* Helper functions */
-    @objc func runTimer() {
+    @objc func onTick() {
         numSeconds += 1
         timerText.text = "\(numSeconds) seconds"
     }
@@ -113,4 +113,3 @@ class ViewController: UIViewController {
         })
     }
 }
-
