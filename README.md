@@ -17,3 +17,4 @@ Bigger problem is how to detect (and act) on whether the screen is on or off. Id
 - Find a way to detect if screen is on or off (hard)
 - Find a way to read screen brightness; act if screen brightness = 0 (sounds more doable)
 - See if you can read the Screen Time info in iOS 12+ to determine when screen time is stagnant
+- Find a way to detect when access to app-files becomes restricted (apparently happens when device locked)
