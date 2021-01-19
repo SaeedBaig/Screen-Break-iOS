@@ -36,6 +36,14 @@ class ViewController: UIViewController {
         UNUserNotificationCenter.current().requestAuthorization(options: [[.alert, .sound, .badge]], completionHandler: {(granted, error) in
             // Handle error
         })
+        
+        // Add a listener to when screen brightness changes
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(onBrightnessChange),
+            name: UIScreen.brightnessDidChangeNotification,
+            object: nil
+        )
     }
     
     /* On button tap */
@@ -83,6 +91,10 @@ class ViewController: UIViewController {
     }
     
     /* Helper functions */
+    @objc func onBrightnessChange() {
+        print("Brightness is now \(UIScreen.main.brightness)")
+    }
+    
     @objc func onTick() {
         numSeconds += 1
         timerText.text = "\(numSeconds) seconds"
